@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        {% block title %}
+        My Webpage
+        {% endblock title %}
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/output.css" rel="stylesheet">
+</head>
+<body class="flex flex-col h-screen w-screen absolute">
+        {% block header %}
+            <header class="flex h-12 w-full fixed shadow-lg bg-white">
+            </header>
+        {% endblock header %}
+        <div class="h-12">
+        </div>
+        
+        {% block main %}
+            <main class="container flex-1 mx-auto sm:ml-auto sm-w-full shadow-2xl">
+                {% block maincontent %}
+    
+                {% endblock maincontent %}
+            </main>
+        {% endblock main %}
+    
+        {% block footer %}
+            <footer class="">
+            </footer>
+        {% endblock footer %}
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block maincontent %}
+    <div class="flex flex-col h-full w-full p-4 gap-4 bg-white">
+        <div class="flex flex-col md:flex-row h-52 gap-2">
+            <div name="infocard" class="flex flex-row-reverse w-full md:w-96 p-4 gap-2 rounded-2xl shadow-lg bg-gradient-to-r from-htpink-100 from-1% to-white">
+                <button class="absolute transition hover:scale-125 duration-150 h-10 w-10 rounded-xl shadow-md bg-htpink-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="mx-auto" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+                </button>
+                <div name="avatar" class="w-36 h-36 self-end">
+                    <img src="static/demoavt/1.png" width="auto" height="auto" class="rounded-full">
+                </div>
+                <div name="info" class="font-extrabold text-[25px] text-htpink-200">
+                    Hello, Hiulaptop
+                </div>
+            </div>
+            <div name="info" class="flex flex-col items-center justify-center flex-1 p-4 gap-2 rounded-2xl shadow-lg bg-white">
+                <div class="flex flex-row gap-2 md:h-1/3 h-12 md:w-1/2 w-full p-1 ring-2 ring-black rounded-xl bg-white">
+                    <input type="text" class="flex-1 border-2 focus:outline-none rounded-xl p-2 bg-white">
+                    <button class="flex items-center justify-center h-full w-12 transition hover:scale-110 duration-150 rounded-xl shadow-md border-2 bg-white">
+                        <p class="font-bold">JOIN</p>
+                    </button>
+                </div>
+                <div class="grid grid-cols-2 h-auto md:w-1/2 w-full p-2 ring-2 ring-black rounded-xl bg-white">
+                    <button class="flex items-center justify-center transition hover:scale-110 duration-150 h-10 rounded-xl shadow-md border-2 bg-white">
+                        <p class="font-bold">Create Contest</p>
+                    </button>
+                    <button class="flex items-center justify-center transition hover:scale-110 duration-150 h-10 rounded-xl shadow-md border-2 bg-white">
+                        <p class="font-bold">Question Bank</p>
+                    </button>
+                    <button class="flex col-span-2 items-center justify-center transition hover:scale-110 duration-150 h-10 rounded-xl shadow-md border-2 bg-white">
+                        <p class="font-bold">Class</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+{% endblock maincontent %}
