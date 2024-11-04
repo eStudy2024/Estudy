@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/output.css" rel="stylesheet">
 </head>
-<body class="flex flex-col h-screen w-screen absolute">
+<body class="flex flex-col h-screen w-screen pt-12">
         {% block header %}
-            <header class="flex h-12 w-full fixed shadow-lg bg-white">
+            <header class="flex h-12 w-full fixed z-50 top-0 shadow-lg bg-white">
             </header>
         {% endblock header %}
         <div class="h-12">
@@ -32,3 +32,7 @@
         {% endblock footer %}
 </body>
 </html>
+
+{% macro input() -%}
+HELLO HIULAPTOP
+{%- endmacro %}

@@ -1,0 +1,402 @@
+
+{% macro multiplechoice(value = "", ansA = "", ansB = "", ansC = "", ansD = "") %}
+<label  class="has-[:checked]:border-green-500 has-[:checked]:scale-[101%] flex flex-row w-full h-fit transition hover:scale-[101%] duration-100 p-2 gap-2 border-2 border-black rounded-lg">
+    <input type="checkbox">
+    </input>
+    <div class="flex flex-col flex-1 gap-2">
+        <div class="break-words w-[1200px] h-24 border border-black rounded-lg">
+            {{value}}
+        </div>
+        <ul class="grid grid-cols-2 gap-2 w-full h-fit">
+            <li class="text-left break-words">
+                <strong class="">A.</strong> {{ansA}}
+            </li>
+            <li class="text-left break-words">
+                <strong class="text-red-500">B. </strong> {{ansB}}
+            </li>
+            <li class="text-left break-words">
+                <strong class="">C. </strong> {{ansC}}
+            </li>
+            <li class="text-left break-words">
+                <strong class="">D. </strong> {{ansD}}
+            </li>
+        </ul>
+    </div>
+</label>
+{% endmacro %}
+
+{% macro truefalse(value = "", value1 = "", value2 = "", value3 = "", value4 = "", ) %}
+<label  class="has-[:checked]:border-green-500 has-[:checked]:scale-[101%] flex flex-row w-full h-fit transition hover:scale-[101%] duration-100 p-2 gap-2 border-2 border-black rounded-lg">
+    <input type="checkbox">
+    </input>
+    <div class="flex flex-col flex-1 gap-2">
+        <div class="break-words w-[1200px] h-24 border border-black rounded-lg">
+            {{value}}
+        </div>
+        <div class="flex flex-col w-full h-fit divide-y-2 border-2 border-black divide-black rounded-lg">
+            <div class="flex flex-row w-full h-fit place-content-center text-md font-bold divide-x-2 divide-black">
+                <div class="w-[1100px]">
+                    <div class="pl-1">
+                        Câu hỏi
+                    </div>
+                </div>
+                <div class="w-14 text-center">
+                    Đúng
+                </div>
+                <div class="w-14 text-center">
+                    Sai
+                </div>
+            </div>
+            <div id="1" class="flex flex-row w-full h-fit divide-x-2 divide-black">
+                <div class="w-[1100px]">
+                    <div class="break-words mx-1">
+                        {{value1}}
+                    </div>
+                </div>
+                <div class="w-14 text-center">
+                    
+                </div>
+                <div class="w-14 text-center">
+                    
+                </div>
+            </div>
+            <div id="2" class="flex flex-row w-full h-fit divide-x-2 divide-black">
+                <div class="w-[1100px]">
+                    <div class="break-words mx-1">
+                        {{value2}}
+                    </div>
+                </div>
+                <div class="w-14 text-center">
+                    
+                </div>
+                <div class="w-14 text-center">
+                    
+                </div>
+            </div>
+            <div id="3" class="flex flex-row w-full h-fit divide-x-2 divide-black">
+                <div class="w-[1100px]">
+                    <div class="break-words mx-1">
+                        {{value3}}
+                    </div>
+                </div>
+                <div class="w-14 text-center">
+                    
+                </div>
+                <div class="w-14 text-center">
+                    
+                </div>
+            </div>
+            <div id="4" class="flex flex-row w-full h-fit divide-x-2 divide-black">
+                <div class="w-[1100px]">
+                    <div class="break-words mx-1">
+                        {{value4}}
+                    </div>
+                </div>
+                <div class="w-14 text-center">
+                    
+                </div>
+                <div class="w-14 text-center">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</label>
+{% endmacro %}
+
+{% macro shortanswer(value = "", ans1 = "", ans2 = "", ans3 = "", ans4 = "") %}
+<label  class="has-[:checked]:border-green-500 has-[:checked]:scale-[101%] flex flex-row w-full h-fit transition hover:scale-[101%] duration-100 p-2 gap-2 border-2 border-black rounded-lg">
+    <input type="checkbox">
+    </input>
+    <div class="flex flex-col flex-1 gap-2">
+        <div class="break-words w-[1200px] h-24 border border-black rounded-lg">
+            {{value}}
+        </div>
+        
+        <div class="flex flex-col w-48 h-fit gap-1 p-1 mx-auto border-2 border-black">
+            <div id="1" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    -
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8">
+                    
+                </div>
+            </div>
+            <div id="2" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    ,
+                </div>
+                <div id="1" class="order-1 w-8 h-8">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8">
+                    
+                </div>
+            </div>
+            <div id="3" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    0
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+            </div>
+            <div id="4" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    1
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+            </div>
+            <div id="5" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    2
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+            </div>
+            <div id="6" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    3
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+            </div>
+            <div id="7" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    4
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+            </div>
+            <div id="8" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    5
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+            </div>
+            <div id="9" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    6
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+            </div>
+            <div id="10" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    7
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+            </div>
+            <div id="11" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    8
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+            </div>
+            <div id="12" class="flex flex-row w-full h-8 gap-2">
+                <div class="mx-auto h-8 font-extrabold text-xl">
+                    9
+                </div>
+                <div id="1" class="order-1 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="2" class="order-2 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="3" class="order-3 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+                <div id="4" class="order-4 w-8 h-8 border-2 border-black rounded-full">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</label>
+{% endmacro %}
+
+{% macro match(value1="", value2="", value3="", value4="", ans1="", ans2="", ans3="", ans4="") %}
+<label  class="has-[:checked]:border-green-500 has-[:checked]:scale-[101%] flex flex-row w-full h-fit transition hover:scale-[101%] duration-100 p-2 gap-2 border-2 border-black rounded-lg">
+    <input type="checkbox">
+    </input>
+    <div class="flex flex-col flex-1 border-2 border-black divide-y-2 divide-black">
+        <div id="1" class="flex flex-row w-[1200px] h-fit gap-2 divide-x-2 divide-black">
+            <div class="w-[600px]">
+                <div class="break-words p-1">
+                    {{value1}}
+                </div>
+            </div>
+
+            <div class="w-[600px]">
+                <div class="break-words p-1">
+                    {{ans1}}
+                </div>
+            </div>
+        </div>
+        <div id="2" class="flex flex-row w-[1200px] h-fit gap-2 divide-x-2 divide-black">
+            <div class="w-[600px]">
+                <div class="break-words p-1">
+                    {{value2}}
+                </div>
+            </div>
+
+            <div class="w-[600px]">
+                <div class="break-words p-1">
+                    {{ans2}}
+                </div>
+            </div>
+        </div>
+        <div id="3" class="flex flex-row w-[1200px] h-fit gap-2 divide-x-2 divide-black">
+            <div class="w-[600px]">
+                <div class="break-words p-1">
+                    {{value3}}
+                </div>
+            </div>
+
+            <div class="w-[600px]">
+                <div class="break-words p-1">
+                    {{ans3}}
+                </div>
+            </div>
+        </div>
+        <div id="4" class="flex flex-row w-[1200px] h-fit gap-2 divide-x-2 divide-black">
+            <div class="w-[600px]">
+                <div class="break-words p-1">
+                    {{value4}}
+                </div>
+            </div>
+
+            <div class="w-[600px]">
+                <div class="break-words p-1">
+                    {{ans4}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</label>
+{% endmacro %}
+
+{% macro fillblank(value = "", ans="") %}
+<label  class="has-[:checked]:border-green-500 has-[:checked]:scale-[101%] flex flex-row w-full h-fit transition hover:scale-[101%] duration-100 p-2 gap-2 border-2 border-black rounded-lg">
+    <input type="checkbox">
+    </input>
+    <div class="flex flex-col flex-1 gap-2">
+        <div class="break-words w-[1200px] h-24 border border-black rounded-lg">
+            {{value}}
+        </div>
+
+        <div class="break-words text-center font-bold text-lg w-[1200px] h-fit">
+            {{ans}}
+        </div>
+    </div>
+</label>
+{% endmacro %}

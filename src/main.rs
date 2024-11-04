@@ -13,6 +13,7 @@ use minijinja_autoreload::AutoReloader;
 
 mod routes;
 // mod database;
+// mod models;
 struct MiniJinjaRenderer {
     tmpl_env: web::Data<minijinja_autoreload::AutoReloader>,
 }
@@ -53,7 +54,8 @@ impl FromRequest for MiniJinjaRenderer {
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     env_logger::init_from_env(env_logger::Env::new().default_filter_or("info"));
-
+    // let db = database::Database::new();
+    // let app_data = web::Data::new(db);
 
     let tmpl_reloader = AutoReloader::new(move |notifier| {
         let mut env: minijinja::Environment<'static> = minijinja::Environment::new();

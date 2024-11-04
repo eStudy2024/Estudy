@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="container flex flex-row flex-1 mx-auto gap-2 p-4 pt-8">
+    <div class="flex flex-col justify-between w-72 h-fit p-2 gap-2 sticky top-14 rounded-xl border border-black">
+        <p class="font-extrabold self-center">FILTER</p>
+        <div class="flex flex-col flex-1 gap-2 p-2">
+            <div class="flex flex-col">
+                <p class="text-sm">Khối lớp: </p>
+                <form>
+                    <ul class="grid grid-cols-3">
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="1">
+                                Lớp 1
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="2">
+                                Lớp 2
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="3">
+                                Lớp 3
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="4">
+                                Lớp 4
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="5">
+                                Lớp 5
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="6">
+                                Lớp 6
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="7">
+                                Lớp 7
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="8">
+                                Lớp 8
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="9">
+                                Lớp 9
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="10">
+                                Lớp 10
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="11">
+                                Lớp 11
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="12">
+                                Lớp 12
+                            </label>
+                        </li>
+                        
+                    </ul>
+                </form>
+                <p class="text-sm">Độ khó</p>
+                <form>
+                    <ul class="grid grid-cols-2">
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="1">
+                                Nhận biết
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="2">
+                                Thông hiểu
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="3">
+                                Vận dụng thấp
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="4">
+                                Vận dụng cao
+                            </label>
+                        </li>
+                    </ul>
+                </form>
+                <p class="text-sm">Loại câu hỏi:</p>
+                <form>
+                    <ul class="grid grid-cols-2">
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="1">
+                                Trắc nghiệm
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="2">
+                                Đúng/Sai
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="3">
+                                Trả lời ngắn
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="4">
+                                Nối cột
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="5">
+                                Bài đọc (Tiếng Anh)
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="6">
+                                Danh sách chọn
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="" value="" id="7">
+                                Điền trống
+                            </label>
+                        </li>
+                    </ul>
+                </form>
+
+                <button type="submit" class="h-10 w-12 font-bold transition hover:text-white hover:scale-110 hover:bg-blue-300 duration-100 border-2 rounded-lg self-end">
+                    Lọc
+                </button>
+            </div>
+        </div>
+    </div>
+    {% from "question.html" import multiplechoice, truefalse, shortanswer, match, fillblank %}
+    <div class="flex flex-col w-full h-fit gap-2">
+        {{ multiplechoice("Câu hỏi trắc nghiệm", "Đáp án A", "Đáp án B (đáp án chính xác)", "Đáp án C", "Đáp án D") }}
+        {{ truefalse("Câu hỏi đúng sai", "đúng", "đúng", "đúng", "đúng") }}
+        {{ shortanswer("Câu hỏi trả lời ngắn", "2", "1", "1", "1")}}
+        {{ match("Nối hàng 1", "Nối hàng 2", "Nối hàng 3", "Nối hàng 4", "Kết quả hàng 1", "Kết quả hàng 2", "Kết quả hàng 3", "Kết quả hàng 4") }}
+        {{ fillblank("Câu gì đso mà thiếu chữ để điền trống", "Đáp án") }}
+    </div>
+</div>
+
+{% endblock main %}
