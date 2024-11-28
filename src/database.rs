@@ -5,9 +5,8 @@ use std::env;
 
 pub type DBPool = r2d2::Pool<ConnectionManager<PgConnection>>;
 pub struct Database {
-    pub pool: DBPool,
+    pub _pool: DBPool,
 }
-
 
 impl Database { 
     pub fn new() -> Self {
@@ -18,6 +17,6 @@ impl Database {
         let pool: DBPool = r2d2::Pool::builder()
             .build(manager)
             .expect("Fail to build pool");
-        Database { pool }
+        Database { _pool: pool }
     }
 }

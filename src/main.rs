@@ -3,17 +3,19 @@ use std::{env, path::PathBuf};
 use actix_utils::future::{ready, Ready};
 use actix_web::{
     dev::{self, ServiceResponse},
-    error,
     http::{header::ContentType, StatusCode},
     middleware::{ErrorHandlerResponse, ErrorHandlers, Logger},
     web, App, FromRequest, HttpRequest, HttpResponse, HttpServer, Responder, Result,
 };
+use error::AppError;
 use minijinja::path_loader;
 use minijinja_autoreload::AutoReloader;
+use serde_json::json;
 
 mod routes;
-// mod database;
-// mod models;
+mod database;
+mod models;
+mod error;
 struct MiniJinjaRenderer {
     tmpl_env: web::Data<minijinja_autoreload::AutoReloader>,
 }
@@ -24,17 +26,17 @@ impl MiniJinjaRenderer {
         tmpl: &str,
         ctx: impl Into<minijinja::value::Value>,
     ) -> actix_web::Result<impl Responder> {
-        self.tmpl_env
+        Ok(self.tmpl_env
             .acquire_env()
-            .map_err(|_| error::ErrorInternalServerError("could not acquire template env"))?
+            .map_err(|_| AppError::InternalServerError(json!({"error":"could not acquire template env"})))?
             .get_template(tmpl)
-            .map_err(|_| error::ErrorInternalServerError("could not find template"))?
+            .map_err(|_| AppError::InternalServerError(json!({"error":"could not find template"})))?
             .render(ctx.into())
             .map(web::Html::new)
             .map_err(|err| {
                 log::error!("{err}");
-                error::ErrorInternalServerError("template error")
-            })
+                AppError::InternalServerError(json!({"error": "template error"}))
+            }))
     }
 }
 
@@ -54,8 +56,8 @@ impl FromRequest for MiniJinjaRenderer {
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     env_logger::init_from_env(env_logger::Env::new().default_filter_or("info"));
-    // let db = database::Database::new();
-    // let app_data = web::Data::new(db);
+    let db = database::Database::new();
+    let _app_data = web::Data::new(db);
 
     let tmpl_reloader = AutoReloader::new(move |notifier| {
         let mut env: minijinja::Environment<'static> = minijinja::Environment::new();
